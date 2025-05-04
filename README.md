@@ -1,33 +1,123 @@
-# COVID-19 SQL Project
+# COVID-19 R Analysis Project
 
-This project demonstrates how to ingest and analyze the [Our World in Data (OWID)](https://docs.owid.io/projects/covid/en/latest/) COVID-19 dataset using **MySQL Server 9.3** via the Windows command line. The dataset contains global COVID-19 data such as cases, deaths, testing, vaccinations, stringency index, and demographic factors.
+## 🔍 Overview
+This project presents a comprehensive exploratory and statistical analysis of global COVID-19 data using R. The goal is to showcase advanced data wrangling, visualization, and statistical testing skills that are directly relevant to data analyst roles.
 
-> ✅ Over 429,000 rows imported and queryable locally with SQL.
+Data is sourced from [Our World in Data (OWID)](https://docs.owid.io/projects/covid/en/latest/), covering over 200 countries with detailed metrics on COVID-19 cases, deaths, testing, vaccinations, policy response, and population demographics.
 
 ---
 
-## 📁 Files Included
-
-- `script.sql` – Creates the database and table, and loads the OWID CSV into MySQL.
-- `owid-covid-data.csv` – The original dataset from OWID. [Download it here](https://covid.ourworldindata.org/data/owid-covid-data.csv)
-- `queries.sql` – 10 analytical SQL queries exploring deaths, vaccinations, testing, CFR, and ICU usage.
+## 🎯 Objectives
+- Ingest and clean real-world COVID-19 data
+- Conduct time-series and comparative visual analysis
+- Apply statistical tests to identify meaningful patterns
+- Present insights clearly for decision-making or public health communication
 
 ---
 
 ## 🧰 Tools Used
-
-- **MySQL Server 9.3**
-- **Windows 11 (Command Prompt)**
-- Optional extensions: Power BI / R for visualization
+- **R** / **RStudio** for analysis and visualization
+- **tidyverse** for data wrangling
+- **ggplot2** and **plotly** for visualizations
+- **zoo** for moving averages
+- **Kendall** for nonparametric trend testing
+- **GitHub** for version control and portfolio presentation
 
 ---
 
-## ⚙️ How to Run
+## 📂 Project Structure
+```
+covid19-r-analysis/
+├── script.r              # Full R analysis script
+├── queries.sql           # Supporting SQL queries for MySQL ingestion
+├── figures/              # Output plots used in README
+├── README.md             # This file
+```
 
-### Step 1: Enable `local_infile`
+---
 
-Open MySQL and run:
+## 📊 Key Analyses
+### ✅ Time Series Trends
+- Daily new cases and deaths in the US
+- 7-day moving average smoothing
+- Multi-country trend comparisons
 
-```sql
-SET GLOBAL local_infile = 1;
+### 📈 Policy Response vs. Case Rates
+- Policy stringency index compared to new case trajectories
+- Vaccination rates by country and their effect
+
+### 📉 Statistical Testing
+- **T-test** comparing US and Germany case rates
+- **Mann-Kendall test** for monotonic trend detection in US cases
+- **Pearson correlation** between policy stringency and case rate in the US
+
+### 📊 Summary Metrics
+- Top 10 countries by total cases
+- Case fatality rates plotted in log–log scale
+- Fully vaccinated population by country
+
+---
+
+## 📷 Example Visualizations
+> (*Add your exported `.png` plots to the `/figures` folder and embed below*)
+
+### US 7-Day Rolling Average of Cases
+![Rolling Avg](figures/us_rolling_avg.png)
+
+### Vaccination Rates by Country
+![Vaccination](figures/vaccination_coverage.png)
+
+### New Cases by Country
+![Comparison](figures/country_comparison.png)
+
+---
+
+## 🚀 How to Run
+1. Clone the repository:
+```bash
+git clone https://github.com/tylermaire/covid19-r-analysis.git
+```
+2. Open `script.r` in RStudio
+3. Install packages:
+```r
+install.packages(c("tidyverse", "lubridate", "plotly", "zoo", "Kendall"))
+```
+4. Make sure `owid-covid-data.csv` is in the project root
+5. Run the script to generate all visuals and results
+
+---
+
+## 📌 Why This Project Matters
+This project shows proficiency in:
+- Cleaning and joining real-world datasets
+- Extracting insights through visual analysis
+- Using statistical methods for validation
+- Presenting findings in a reproducible, portfolio-ready format
+
+Whether applying for a role in healthcare analytics, public policy, or data-driven business roles, this project reflects the analytical mindset and technical ability of a professional data analyst.
+
+---
+
+## 📎 Data Source
+- [Our World in Data COVID-19 Dataset](https://github.com/owid/covid-19-data)
+- License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+
+---
+
+## 👨‍🔬 Author
+**Tyler Maire**  
+Bioinformatics & Data Analytics  
+University of Florida Entomology Department  
+GitHub: [@tylermaire](https://github.com/tylermaire)
+
+---
+
+## 📈 Future Improvements
+- Add Shiny dashboard for interactivity
+- Expand to US state-level analysis
+- Apply predictive modeling or clustering for trend detection
+
+---
+Thanks for visiting! ⭐ If you like this project, consider starring or sharing it!
+
 
