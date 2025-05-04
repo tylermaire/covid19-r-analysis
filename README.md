@@ -1,4 +1,4 @@
-# COVID-19 R Analysis Project
+# COVID-19 R and SQL Analysis Project
 
 ## 🔍 Overview
 This project presents a comprehensive exploratory and statistical analysis of global COVID-19 data using R. The goal is to showcase advanced data wrangling, visualization, and statistical testing skills that are directly relevant to data analyst roles.
@@ -59,16 +59,11 @@ covid19-r-analysis/
 ---
 
 ## 📷 Example Visualizations
-> (*Add your exported `.png` plots to the `/figures` folder and embed below*)
 
 ### US 7-Day Rolling Average of Cases
-![Rolling Avg](figures/us_rolling_avg.png)
+[![Description of Image](figures/635db6a0-066b-45e8-9c29-31bcb0e36ef5.png)](figures/635db6a0-066b-45e8-9c29-31bcb0e36ef5.png)
 
-### Vaccination Rates by Country
-![Vaccination](figures/vaccination_coverage.png)
 
-### New Cases by Country
-![Comparison](figures/country_comparison.png)
 
 ---
 
